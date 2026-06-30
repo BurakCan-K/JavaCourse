@@ -1,4 +1,4 @@
-package constructor;
+
 
 public class User {
 
@@ -12,22 +12,27 @@ public class User {
         this.password = password;
     }
 
+    /*
     //Constructor overloading
     public User(String email) {
         this.email = validateEmail(email);
     }
 
-
+    */
 
 
     //Validation
     private String validateEmail(String email) {
-     if (email == null || email.contains("@")) {
-         throw  new IllegalArgumentException("Invalid email");
-     }
-     return email;
+        if (email == null || email.contains("@")) {
+            throw  new IllegalArgumentException("Invalid email");
+        }
+        return email;
     }
 
 
+    @Override
+    public String toString() {
+        return "User [Email: " + email + ", Password: " + password + "]";
+    }
 
 }
